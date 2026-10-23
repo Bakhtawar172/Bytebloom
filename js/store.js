@@ -12,7 +12,13 @@ function loadCart() {
 }
 
 function saveCart() {
-  localStorage.setItem("bytebloomCart", JSON.stringify(cart));
+  try {
+    localStorage.setItem("bytebloomCart", JSON.stringify(cart));
+    return true;
+  } catch (error) {
+    console.error("Could not save cart:", error);
+    return false;
+  }
 }
 
 // ===== HELPER MODULE =====
