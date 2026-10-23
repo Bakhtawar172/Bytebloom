@@ -13,7 +13,7 @@ A front-end course catalogue store where visitors can browse, search, filter and
 - **Backend:** Not required for this assignment
 
 
-**GitHub repository:** `https://github.com/YOUR-USERNAME/bytebloom`
+**GitHub repository:** [Bytebloom](https://github.com/Bakhtawar172/Bytebloom)
 
 ## Pages
 
