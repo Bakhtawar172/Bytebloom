@@ -75,8 +75,11 @@ $(document).ready(function () {
 
   // ----- 3. Mobile menu (toggleClass) -----
   $("#menu-toggle").on("click", function () {
-    $("#nav-links").toggleClass("open");
-  });
+  const isOpen = $("#nav-links").hasClass("open");
+
+  $("#nav-links").toggleClass("open");
+  $(this).attr("aria-expanded", String(!isOpen));
+});
 
   // ----- 4. Back-to-top button (fade + animate) -----
   $(window).on("scroll", function () {
