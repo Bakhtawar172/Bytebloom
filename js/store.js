@@ -148,7 +148,14 @@ function removeFromCart(id) {
 function changeQty(id, amount) {
   const item = cart.find(entry => entry.id === id);
   if (!item) return;
+
+  if (amount > 0 && item.qty >= 10) {
+    showToast("Maximum quantity is 10 per course.");
+    return;
+  }
+
   item.qty += amount;
+
   if (item.qty <= 0) {
     removeFromCart(id);
   } else {
