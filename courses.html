@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Bytebloom</title>
+<link rel="icon" type="image/svg+xml" href="images/web.svg">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html">Byte<span>bloom</span></a>
+      <button id="menu-toggle" aria-label="Open menu">&#9776;</button>
+      <nav>
+        <ul id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="cart.html">Cart (<span id="cart-badge">0</span>)</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+        <section>
+      <h1>Course catalogue</h1>
+      <div class="filter-bar">
+        <div>
+          <label for="search">Search by name</label>
+          <input type="search" id="search" placeholder="e.g. Python">
+        </div>
+        <div>
+          <label for="category">Category</label>
+          <select id="category">
+            <option value="all">All categories</option>
+            <option value="web">Web</option>
+            <option value="data">Data</option>
+            <option value="design">Design</option>
+          </select>
+        </div>
+        <div>
+          <label for="sort">Sort by</label>
+          <select id="sort">
+            <option value="default">Default order</option>
+            <option value="price-low">Price: low to high</option>
+            <option value="price-high">Price: high to low</option>
+            <option value="name">Name: A to Z</option>
+            <option value="rating">Rating: best first</option>
+          </select>
+        </div>
+      </div>
+      <p id="message" class="message"></p>
+      <p id="result-count"></p>
+    </section>
+
+    <section id="details-panel" class="details"></section>
+
+    <section>
+      <div id="product-grid" class="course-grid"></div>
+    </section>
+
+
+      </main>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="index.html">Byte<span>bloom</span></a>
+        <p>Short, practical courses in Web, Data and Design.</p>
+        <div class="social">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Tracks</h4>
+        <ul>
+          <li><a href="courses.html">Web Development</a></li>
+          <li><a href="courses.html">Data</a></li>
+          <li><a href="courses.html">Design</a></li>
+          <li><a href="index.html">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <ul>
+          <li><i class="fa-solid fa-location-dot"></i> 12 Mall Road, Lahore</li>
+          <li><i class="fa-solid fa-phone"></i> 042-1234567</li>
+          <li><i class="fa-solid fa-envelope"></i> <a href="mailto:hello@bytebloom.example">hello@bytebloom.example</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Bytebloom. All rights reserved.</p>
+      <p><a href="#">Privacy</a> <a href="#">Terms</a> <a href="#">Help</a></p>
+    </div>
+  </footer>
+  
+    <div id="toast" role="status"></div>
+  <button id="back-to-top" aria-label="Back to top">&uarr;</button>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>
