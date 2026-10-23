@@ -5,7 +5,20 @@ let cart = loadCart();
 // ===== STORAGE MODULE (bonus: cart survives refresh) =====
 function loadCart() {
   try {
-    return JSON.parse(localStorage.getItem("bytebloomCart")) || [];
+    const saved = JSON.parse(
+      localStorage.getItem("bytebloomCart")
+    );
+
+    if (!Array.isArray(saved)) return [];
+
+    return saved.filter(item =>
+      item &&
+      Number.isInteger(item.id) &&
+      Number.isInteger(item.qty) &&
+      item.qty >= 1 &&
+      item.qty <= 10 &&
+      fallbackCourses.some(course => course.id === item.id)
+    );
   } catch (error) {
     return [];
   }
