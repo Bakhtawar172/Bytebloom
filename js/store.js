@@ -67,11 +67,17 @@ function getVisibleCourses() {
   const sortBy = document.getElementById("sort").value;
 
   // filter(): keep courses that match the search text AND the category
-  const filtered = courses.filter(course =>
-    course.name.toLowerCase().includes(searchText) &&
-    (category === "all" || course.category === category)
-  );
+  const filtered = courses.filter(course => {
+  const matchesSearch =
+    course.name.toLowerCase().includes(searchText) ||
+    course.category.toLowerCase().includes(searchText) ||
+    course.level.toLowerCase().includes(searchText);
 
+  const matchesCategory =
+    category === "all" || course.category === category;
+
+  return matchesSearch && matchesCategory;
+});
   // sort(): copy first with spread so the original array is never changed
   const sorted = [...filtered];
   if (sortBy === "price-low") sorted.sort((a, b) => a.price - b.price);
